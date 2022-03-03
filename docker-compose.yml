@@ -1,0 +1,15 @@
+version: '3.6'
+
+networks:
+  py-imp-network:
+      name: py-imp-network
+      driver: bridge
+
+services:
+
+  python:
+    build: './'
+    networks:
+      - py-imp-network
+    volumes:
+      - ./:/usr/src/app
